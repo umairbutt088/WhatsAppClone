@@ -2,6 +2,9 @@ import {Dimensions, Platform} from 'react-native';
 import 'styled-components';
 
 const colors = {
+  background: '#E5E5E5',
+  primery: '#0CCC83',
+  buttonColor: '#00A884',
   white: '#ffffff',
   black: '#000000',
   primery10: '#EAF0EF',
@@ -43,7 +46,7 @@ const fontWeights = {
 
 const fontSize = {
   largeTitle: 28,
-  subTitle: 22,
+  subTitle: 20,
   smallTitle: 16,
   explanation: 22,
   buttonText: 18,
