@@ -1,0 +1,1 @@
+export {appImage} from './assets';

@@ -1,0 +1,461 @@
+{
+  "common": {
+    "okay": "OKAY",
+    "back": "Back",
+    "home": "Home",
+    "change": "CHANGE",
+    "choose": "CHOOSE",
+    "order": "ORDER",
+    "cancel": "Cancel",
+    "settings": "Settings",
+    "continue": "CONTINUE",
+    "backHome": "BACK TO HOME",
+    "close": "Close",
+    "liveAgent": "LIVE AGENT",
+    "callMeNow": "CALL ME NOW",
+    "somethingWentWrong": "Something went wrong",
+    "weAreSorry": "We are sorry"
+  },
+
+  "landingScreen": {
+    "buttonTitle": "SET UP SQUIRE",
+    "helpLineText": "Live agents\n (yes- humans!) are available for you 24/7",
+    "clickCallSupport": "Click \"LIVE AGENT\" anytime for assistance"
+  },
+
+  "helpConfirmationScreen": {
+    "and": " and ",
+    "noButton": "I PREFER TO DO IT MYSELF",
+    "yesButton": "SPEAK TO LIVE AGENT",
+    "helpLineText": "A friendly live agent\n(yes- human!) can help\n customizing Squire for you over a call",
+    "privacyPolicy": "By clicking a button above, you accept Squire’s ",
+    "termsAndConditions": "Terms & Conditions",
+    "pricavyPolicy": "Privacy Policy"
+  },
+
+  "addPhoneNumberScreen": {
+    "callSupport": "CALL SUPPORT",
+    "callMeText": "CALL ME TO VERIFY NUMBER",
+    "enterPhoneNumber": "Please enter your phone number",
+    "verifyNumberViaText": "Click continue to verify your number via text.",
+    "whatPhoneNumberAreYouAvailable": "What phone number are you available on right now?",
+    "notificationDetails": "We ask for your number to contact you about orders you make on the Squire app",
+    "callToVerifyNumber": "Don't want to use text? Click `call me to verify number` and we'll call you.",
+    "clickContinueAndOne": "Click “Continue” for a live agent to call\n you on the number above",
+    "lianeNowAvailableToHelp": "Liane is now available to help customizing Squire for you over a call",
+    "weDidnotRecognizeThisNumber": "We didn't recognize this number"
+  },
+
+  "smsConfirmationScreen": {
+    "linkTexted": "Please click the link we just sent you over a\n text message",
+    "buttonTitle": "GO TO TEXT MESSAGES",
+    "problemReceivingMessage": "SOMETHING DIDN’T WORK",
+    "linkDetail": "Clicking the link helps us verify your number"
+  },
+
+  "userConfirmationModel": {
+    "newNumberAdded": "New Number Added Successfully!",
+    "numberAddedAndVarified": "Your new phone number has been added and verified."
+  },
+
+  "addNameScreen": {
+    "lastName": "What is your last name?",
+    "firstName": "What is your first name?",
+    "descriptionText": "We need your name to tailor Squire to you and make sure you can use different services seamlessly."
+  },
+
+  "addEmailAddressScreen": {
+    "enterEmailAddress": "Enter your email address",
+    "descriptionText": "Most services in Squire require an email address. We'll also use it to send you updates about your Squire account. Don't worry, we don't sell your email."
+  },
+
+  "addPaymentMethodScreen": {
+    "skipForNow": "SKIP FOR NOW",
+    "addPaymentMethod": "ADD PAYMENT METHOD",
+    "paymentMethod": "Add your payment method",
+    "securityText": "It’s 100% secure! We’ll alsways ask for your approval every time the card is charged",
+    "descriptionText": "Some of the services in Squire (like getting a ride) cost money. Add your payment method now so you can easily order services anytime. "
+  },
+
+  "cardConfirmationScreen": {
+    "cardSavedSuccessfully": "Card saved successfully!",
+    "yourCardSavedSuccessfully": "Your card saved successfully. Now you can easily access our services anytime."
+  },
+
+  "cardConfirmationModel": {
+    "cardSaved": "Card Saved",
+    "cardSavedSuccessfully": "Card saved successfully!"
+  },
+
+  "currentLocationScreen": {
+    "alertDescription": "Allow app to use your location",
+    "allowYourLocation": "Allow Squire to use your location",
+    "descriptionText": "We use your phone location to locate nearby services and simplify ride ordering, restaurant reservations and activity bookings. If you choose to share your location, click share location` and then `allow` on the next screen."
+  },
+
+  "welcomeScreen": {
+    "titleText": "Nice job",
+    "getStartedButton": "GO TO HOME SCREEN",
+    "accountReadyToUse": "You're all set!",
+    "needHelpText": "You can now start using many online services in one place + more services are coming soon"
+  },
+
+  "dashboard": {
+    "needTaxi": "Order a ride",
+    "needBoquet": "Send flowers",
+    "techsupport": "Tech support",
+    "booking": "Books & Podcasts",
+    "activity": "Activities",
+    "radio": "Live Radio",
+    "weather": "Weather Forecast",
+    "viewRideDetails": "VIEW RIDE DETAILS",
+    "yourCurrentRide": "Your Current Ride",
+    "reservation": "Restaurant reservation",
+    "comingServices": "coming soon:",
+    "scrollDown": "Scroll Down",
+    "listeningNow": "Listening now",
+    "title": "What would you like\n to do?"
+  },
+
+  "destinationAddress": {
+    "startTypingAddress": "Start typing destination address",
+    "destinationHeading": "Where do you want to go?",
+    "typeDestinationAddress": "Choose destination address",
+    "chooseFromrecentDestinations": "Or, choose from recent addresses",
+    "chooseAddress": "Choose the correct destination address below.",
+    "typeAddressToChoose": "We'll show you a list of destinations to choose from"
+  },
+
+  "pickupLocationScreen": {
+    "confirmButton": "CONFIRM AND CONTINUE",
+    "confirmPickup": "Confirm your pickup address",
+    "changeAddressButton": "CHANGE PICKUP ADDRESS",
+    "descroptionText": "If this pickup address is incorrect, you can change it."
+  },
+
+  "pickUpAddress": {
+    "choosePickUpAddress": "Choose pick up address",
+    "startTypingAddress": "Start typing an origin address",
+    "whereWillTaxiPickYouUp": "Where will we pick you up?",
+    "typePickupAddressToSeeOptions": "We'll show you a list of options to choose from",
+    "confirmPickupLocation": "Choose an address from the list to confirm pickup location.",
+    "chooseToConfirmPickupLocation": "Choose the correct origin address below."
+  },
+
+  "summeryAddressScreen": {
+    "noFees": "FREE",
+    "amount": "$12.40",
+    "orderTaxi": "ORDER RIDE",
+    "almostDone": "Almost done",
+    "squireFees": "Squire fee: ",
+    "price": "Uber price estimate:",
+    "pickUpAddress": "Pickup address: ",
+    "dropOffAddress": "Destination address: ",
+    "surgePriceAmountText": "Prices are higher than normal",
+    "makeSureEverythingIsCorrect": "Please make sure everything is correct.",
+    "addressesAreTooFar": "We think pickup and destination addresses are too far",
+    "pickupAddressIsTooFarFromDestination": "It seems to like the pickup address is too far from destination. Please edit the route or click the Live Agent button to speak to a human customer service agent"
+  },
+
+  "paymentDetailsScreen": {
+    "callSupport": "TALK TO AN AGENT",
+    "fullNameOnCard": "Full Name on Card",
+    "addPaymentMethod": "Add a credit card",
+    "creditCardInformation": "Credit Card Information",
+    "enterYourCardDetails": "Or enter your card details",
+    "weEncounteredPaymentIssue": "We are sorry, we encountered a payment issue",
+    "settingUpYourPaymentMethod": "Prefer to add you card over the phone talking to a human?",
+    "yourCardWillNotBeCharged": "Your card will only be charged after your trip is completed.",
+    "weUseLatestTechnology": "We use the latest technology to keep your information 100% secure.",
+    "pleaseEnterDifferentNumber": "Please enter a different number or click the Live Agent button to speak to a human customer service agent"
+  },
+
+  "waitingTaxiScreen": {
+    "cancelTaxi": "CANCEL RIDE",
+    "findindYouTaxi": "Please wait while we are finding you a driver",
+    "findindYouTaxiForRedispatch": "We are sorry, your driver had to cancel this ride. We are working on finding you another one",
+    "lookingForAvailableDrivers": "This may take up to 5 minutes. Our ride partners may send you a confirmation and other updates via text."
+  },
+
+  "taxiNotAvailable": {
+    "tryAgainButton": "TRY AGAIN",
+    "backToServices": "BACK TO SERVICES",
+    "driversAreBusy": "Sorry, all drivers are currently busy completing other rides.",
+    "tryAgainLater": "Please try again later."
+  },
+
+  "taxiConfirmedScreen": {
+    "driver": "Driver:",
+    "carModel": "Car model:",
+    "cancelTaxi": "CANCEL RIDE",
+    "callDriver": "CALL DRIVER",
+    "driverName": "Driver:",
+    "driverRating": "Rating:",
+    "carNumberPlate": "Plate number:",
+    "pickUpAddress": "Pickup Address: ",
+    "dropOffAddress": "Destination Address: ",
+    "adderss": "49 Long Dr Danville, AL - 35619",
+    "TaxiIsconfirmed": "Your ride is on the way",
+    "taxiWillAriveAt": "Your ride will arrive in:",
+    "verifyDriver": "Please verify your driver's identity. Please note, your car may not have any stickers or decals identifying it as a cab."
+  },
+
+  "cancelTaxi": {
+    "noKeepMyTaxi": "NO, KEEP MY RIDE",
+    "cancelationChargesAmount": "$00,00",
+    "cancelTaxiWithPenalty": "YES, CANCEL RIDE",
+    "wantToCancelTaxi": "Do you want to cancel the ride?",
+    "cancelationCharges": "Canceling the ride now will incur a cancellation charge of ",
+    "taxiWillNotComeToPickYou": "If you cancel, the ride will no longer pick you up and you will not be charged."
+  },
+
+  "cancelTaxiConfirmed": {
+    "backToServices": "BACK TO SERVICES",
+    "startNewServices": "START NEW ORDER",
+    "taxiHasBeenCanceled": "Your ride has been canceled",
+    "whatDoYouWantToDoNow": "What do you want to do now?"
+  },
+
+  "cancelTaxiWithCost": {
+    "noKeepMyTaxi": "NO, KEEP MY RIDE",
+    "yesCancelTaxiWithPenalty": "YES, CANCEL RIDE",
+    "doYouWantToCancelTheTaxi": "Your driver is already on their way. Do you still want to cancel the ride?",
+    "taxiWillNotComeToPickYouUp": "If you cancel 5 minutes after requesting, a fee may apply."
+  },
+
+  "confirmationFroCancelTaxi": {
+    "noKeepMyRide": "NO, KEEP MY RIDE",
+    "yesCancelOrder": "YES, CANCEL RIDE",
+    "doYouWantToCancelYourOder": "Do you want to cancel the ride?",
+    "ifYouCancelTheTaxiWillNotCome": "If you cancel 5 minutes or more after ordering, a fee may apply"
+  },
+
+  "taxiDriverCancel": {
+    "goBackToServices": "GO BACK TO SERVICES",
+    "wantToReorderTaxi": "LOOK FOR ANOTHER DRIVER",
+    "unfortunatelyYourDriver": "Unfortunately, your driver had to cancel the trip",
+    "theyMaybeHavingCarTrouble": "They may be having car trouble or can't make it on time. You can reorder the ride and we'll find you another driver."
+  },
+
+  "inTaxiDetails": {
+    "driver": "Driver:",
+    "estimatedPrice": "Estimated price:",
+    "welcomeOnboard": "Welcome Onboard!",
+    "pickUpAddress": "Pickup Address: ",
+    "dropOffAddress": "Destination Address: ",
+    "youWillArriveAt": "You will arrive in:",
+    "looksLikeYouAreInCar": "Looks like you are in the car. If not, please call support"
+  },
+
+  "rideComplete": {
+    "thankYou": "Thank You!",
+    "finalPrice": "Final Price:",
+    "pickUpAddress": "Pickup Address: ",
+    "yourRideSummary": "Your Ride Summary:",
+    "dropOffAddress": "Destination Address: ",
+    "weTextedYouTheReceipt": "We texted you the receipt"
+  },
+
+  "callSupport": {
+    "cancelRequest": "CANCEL REQUEST ",
+    "iHaveAgentOnLine": "I HAVE AGENT ON THE LINE",
+    "inNext5Mins": "It typically takes up to 5 minutes.",
+    "oneOfOurAgnets": "Liane will call you from\n +1 ",
+    "freeCall": "(FREE call)",
+    "thanksForContacting": "Please stand by",
+    "didNotManageConnectYouWithHuman": "We didn't manage to connect you with a human live agent from within the Squire app. Please call us at"
+  },
+
+  "onboardingCallSupport": {
+    "startButton": "START",
+    "thanksForContacting": "Please hold here, a live agent\n will call you shortly"
+  },
+
+  "cancelOnboardingCallSupport": {
+    "yesCancel": "YES, CANCEL CALL",
+    "noWait": "NO, KEEP WAITING",
+    "areYouSureYouWantToCancel": "Are you sure you want to cancel this call?"
+  },
+
+  "settings": {
+    "logout": "LOG OUT",
+    "deleteAccount": "DELETE ACCOUNT",
+    "callSupport": "CALL AN AGENT",
+    "goBackToServices": "BACK TO SERVICES",
+    "toUpdateOrChange": "To update or change settings, please call support and we’ll walk you through the changes",
+    "version": "Version"
+  },
+
+  "logoutConfirmation": {
+    "yesLogout": "YES, LOG OUT",
+    "noKeepMeLogin": "NO, KEEP ME LOG IN",
+    "areYouSureYouWantToLogout": "Are you sure you want to log out of the app?",
+    "ifYouLogoutNow": "If you logout now, you'll have to log in again to use Squire"
+  },
+
+  "deleteAccountConfirmation": {
+    "yesDeleteAccount": "YES, DELETE MY ACCOUNT",
+    "noKeepMeLogin": "NO, KEEP MY ACCOUNT",
+    "areYouSureYouWantToDeleteAccount": "Are you sure you want to delete your account?",
+    "ifYouLogoutNow": "If you delete your account, you'll have to register again to use Squire services"
+  },
+
+  "AddressesFarAwayErrorScreen": {
+    "orderRide": "ORDER RIDE",
+    "sorryItIsTooFar": "Sorry, the destination is too far away",
+    "pleaseChangeOneOrBothAddresses": "Please change one or both addresses."
+  },
+
+  "ServiceNotAvalibleErrorScreen": {
+    "squireIsCurrentlyUnavailable": "Sorry, Squire is currently unavailable in your area",
+    "weWillSendYouMessageOnceWeOperateInYourArea": "We'll let you know when we begin operating in your area.",
+    "enterDifferentAddress": "ENTER DIFFERENT ADDRESS"
+  },
+
+  "textInput": {
+    "PhoneNumberNotvalid": "This phone number is not valid.\nPlease try again."
+  },
+
+  "deeplinkErrorScreen": {
+    "SendNewLink": "This link expired",
+    "sendNewVerificationLink": "SEND NEW VERIFICATION LINK",
+    "weSendYouAnotherOne": "No worries, we'll send you another one."
+  },
+
+  "LocationPermissionScreen": {
+    "weNeedToKnowYourLocation": "We need to know your location",
+    "allowSquireToUseYourLocation": "We use your phone location to find services near you and simplify cab ordering"
+  },
+
+  "SocketIO": {
+    "noInternet": "No Internet",
+    "pleaseCheckYourInternetConnection": "Please check your internet connection",
+    "squireNeedsActiveInternet": "Squire needs an active internet connection. Please connect your device to the internet or call us at",
+    "weFailedToFetchUpdates": "We failed to fetch updates about your trip. Please click the Live Agent button to speak to a human customer service agent"
+  },
+  "ChooseSize": {
+    "size": "Choose a size",
+    "small": "COMPACT",
+    "medium": "MEDIUM",
+    "large": "LARGE"
+  },
+
+  "PreSummaryFlower": {
+    "titleStart": "Here a few examples of ",
+    "titleEnd": " bouquets for ",
+    "description": "Once you confirm, we'll start working on\n your order",
+    "button": "CONFIRM",
+    "price": "Total price:",
+    "squireNeedsAnActiveInternetConnection": "Squire needs an active internet connection. Please connect your device to the internet or call us at <1 (855) 519-2858>"
+  },
+
+  "chooseOccasion": {
+    "occasion": "Choose an occasion",
+    "congrats": "CONGRATS",
+    "birthday": "BIRTHDAY",
+    "anniversary": "ANNIVERSARY",
+    "getWell": "GET WELL",
+    "sympathy": "SYMPATHY",
+    "others": "OTHER"
+  },
+
+  "cancelFlowerOrder": {
+    "wantToCancelOrder": "Do you want to cancel your order?",
+    "flowersWillNotBeSent": "If you cancel, we won’t ba able to to send flowers to your loved one.",
+    "yesCancelOrder": "YES, CANCEL ORDER",
+    "keepOrdering": "KEEP ORDERING"
+  },
+  "FlowerOrderConfirmed": {
+    "title": "Your order is confirmed and we are working on it",
+    "description": "We need few more details to complete the order",
+    "button": "CONTINUE"
+  },
+
+  "SetDeliveryAddress": {
+    "choosePickUpAddress": "Choose delivery address",
+    "startTypingAddress": "Start typing an address",
+    "title": "Delivery address",
+    "typePickupAddressToSeeOptions": "We'll show you a list of addresses to choose from",
+    "chooseToConfirmPickupLocation": "Choose the correct address to confirm."
+  },
+  "AdditionalShippingAddress": {
+    "apartment": "Apartment / Suite / Room",
+    "recepient_name": "Recipient’s full name",
+    "recepient_phone_number": "Recipient’s phone number"
+  },
+  "SetDeliveryDate": {
+    "title": "When should it arrive?"
+  },
+  "FlowerOrderOnTheWay": {
+    "title": "Your order is on it’s\n way!",
+    "description": "We texted you the receipt. We'll let\n you know when your order arrives.",
+    "button": "GO TO HOME"
+  },
+  "deliveryMessage": {
+    "writeYourMessage": "Write your message",
+    "startTypingMessage": "Start typing a message",
+    "characters": "120 Characters",
+    "done": "I AM DONE",
+    "continueWithMessage": "CONTINUE WITHOUT MESSAGE"
+  },
+
+  "InactiveService": {
+    "title": "Something went wrong",
+    "description": "We are sorry, this service is not availeble at the moment "
+  },
+
+  "channelGallery": {
+    "title": "What would you like to listen?",
+    "listen": "LISTEN",
+    "suggest": "SUGGEST RADIO STATIONS"
+  },
+
+  "serverError": {
+    "title": "We're sorry, something went wrong on our end. Please call support and we'll be happy to help.",
+    "description": "We are working on fixing the problem. Please try again after some time.",
+    "buttonTitle": "BACK TO HOME",
+    "callSupport": "CALL SUPPORT"
+  },
+
+  "newsPreferences": {
+    "select": "SELECT",
+    "selected": "SELECTED",
+    "title": "Select the news categories you are most interested in",
+    "showMeAllNews": "SHOW ME ALL NEWS",
+    "savePreference": "SAVE PREFERENCES",
+    "onlyFirstTimeRequired": "This is a one-time setup to help us show you the most relevant articles"
+  },
+
+  "newsList": {
+    "button": "READ NEWS"
+  },
+
+  "newsDetail": {
+    "publishOn": "Published on",
+    "clickHere": "Click Here",
+    "weFailedLoadThisNewsItem": "We failed to load this news item. If this keep happening, please click the Live Agent button to speak to a human customer service agent"
+  },
+
+  "addUserSuggestions": {
+    "servicesTitle": "What services would you like to see on our home screen?",
+    "radioStationsTitle": "What radio stations would you like to see on our app?",
+    "newsCategoriesTitle": "What news categories would you like to see on our app?",
+    "servicesTextInputTitle": "Start typing services",
+    "radioStationsTextInputTitle": "Start typing radio stations",
+    "newsCategoriesTextInputTitle": "Start typing news category",
+    "servicesTextInputPlaceholder": "Type services separeted by commas",
+    "radioStationsTextInputPlaceholder": "Type radio stations separeted by commas",
+    "newsCategoriesTextInputPlaceholder": "Type news categories separeted by commas",
+    "description": "Please add your suggestions below",
+    "buttonTitle": "SUBMIT SUGGESTIONS"
+  },
+
+  "noInternet": {
+    "title": "No Internet Connection",
+    "description": "The features in this area require Internet connectivity. Please connect your device to the Internet and try again"
+  },
+
+  "LiveRadioDetail": {
+    "weFailedToConnect": "We failed to connect to this live radio channel. If this keep happening, please click the Live Agent button to speak to a human customer service agent"
+  }
+}
