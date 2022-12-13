@@ -4,11 +4,17 @@ import {theme} from '../../ui';
 
 interface props {
   isNumber?: boolean;
+  value?: string;
+  setValue?: (value: string) => void | undefined;
+  setFormattedValue?: (value: string) => void | undefined;
 }
 
-export const PhoneTextInput: FunctionComponent<props> = ({isNumber}) => {
-  const [value, setValue] = useState('');
-  const [formattedValue, setFormattedValue] = useState('');
+export const PhoneTextInput: FunctionComponent<props> = ({
+  isNumber,
+  value,
+  setValue,
+  setFormattedValue,
+}) => {
   const phoneInput = useRef<PhoneInput>(null);
 
   function formatPhoneNumber(value: string) {
@@ -66,10 +72,10 @@ export const PhoneTextInput: FunctionComponent<props> = ({isNumber}) => {
           borderWidth: 2,
           borderColor: valid ? theme.colors.primery100 : theme.colors.red100,
         }}
-        textInputProps={{
-          value: value && formatPhoneNumber(value),
-          maxLength: 14,
-        }}
+        // textInputProps={{
+        //   value: value && formatPhoneNumber(value),
+        //   maxLength: 14,
+        // }}
         textInputStyle={{
           fontSize: theme.fontSize.explanation,
           height: 56,

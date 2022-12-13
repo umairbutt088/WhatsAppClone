@@ -7,11 +7,13 @@ interface props {
   title?: string;
   placeHolder?: string;
   onChangeText?: (text: string) => void;
+  small?: boolean;
 }
 
-const Container = styled.View({
-  width: '100%',
-});
+const Container = styled.View<{small: boolean}>(({small}) => ({
+  width: small ? '15%' : '100%',
+}));
+
 const InputContainer = styled.View({
   height: 50,
   borderWidth: 0.2,
@@ -38,9 +40,10 @@ export const CustomTextInput: FunctionComponent<props> = ({
   title,
   placeHolder,
   onChangeText,
+  small = false,
 }) => {
   return (
-    <Container>
+    <Container small={small}>
       <InputTitle>{title}</InputTitle>
       <Spacer.Column numberOfSpaces={2} />
       <InputContainer>
