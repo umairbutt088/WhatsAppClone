@@ -4,4 +4,5 @@ export const appImage = {
   DesignImage: require('../../assets/icons/Vector.png'),
   welcomeScreenImage: require('../../assets/icons/welcomeScreenImage.png'),
   Dots: require('../../assets/icons/Dots.png'),
+  backArrow: require('../../assets/icons/backArrow.png'),
 };

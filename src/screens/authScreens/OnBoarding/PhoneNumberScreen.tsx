@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {appImage} from '../../../utilities';
 import styled from 'styled-components/native';
 import {theme} from '../../../ui';
@@ -8,6 +8,13 @@ import {
   CustomButton,
   ParentContainer,
 } from '../../../components';
+import auth from '@react-native-firebase/auth';
+import {useNavigation} from '@react-navigation/native';
+import {Alert} from 'react-native';
+
+interface props {
+  value?: string;
+}
 
 const Container = styled.SafeAreaView({
   flex: 1,
@@ -56,6 +63,35 @@ const ButtonContianer = styled.KeyboardAvoidingView({
 });
 
 const PhoneNumberScreen = () => {
+  const [confirm, setConfirm] = useState(null);
+  const [code, setCode] = useState('');
+  const [value, setValue] = useState('');
+  const [formattedValue, setFormattedValue] = useState('');
+
+  const nav = useNavigation();
+  console.log('value', value, formattedValue);
+
+  async function signInWithPhoneNumber(value) {
+    try {
+      const confirmation: any = await auth().signInWithPhoneNumber(
+        formattedValue,
+      );
+      console.log('confirmation', confirmation);
+
+      setConfirm(confirmation);
+    } catch (error: any) {
+      Alert.alert('Error', error.message);
+    }
+  }
+
+  const handleOnPress = () => {
+    signInWithPhoneNumber(value);
+    nav.navigate('EnterOtpScreen', {
+      value: formattedValue,
+      confirm: confirm,
+    });
+  };
+
   return (
     <ParentContainer>
       <Container>
@@ -72,9 +108,14 @@ const PhoneNumberScreen = () => {
           <DescriptionText_1>Whats my number?</DescriptionText_1>
         </DescriptionText>
         <Spacer.Column numberOfSpaces={20} />
-        <PhoneTextInput isNumber />
+        <PhoneTextInput
+          isNumber={true}
+          value={value}
+          setValue={setValue}
+          setFormattedValue={setFormattedValue}
+        />
         <ButtonContianer>
-          <CustomButton small title="NEXT" />
+          <CustomButton small title="NEXT" onPress={handleOnPress} />
         </ButtonContianer>
       </Container>
     </ParentContainer>
