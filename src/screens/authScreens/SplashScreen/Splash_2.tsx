@@ -60,7 +60,7 @@ const SplashScreen_2 = () => {
       </ImageContainer>
       <LoadingContainer>
         <Spacer.Column numberOfSpaces={10} />
-        <Loader loading={loading} show={true} />
+        <Loader show={loading} size={40} />
         <Spacer.Column numberOfSpaces={10} />
         <LoadingText>Loading...</LoadingText>
       </LoadingContainer>

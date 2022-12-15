@@ -2,15 +2,10 @@ import React, {useState, FunctionComponent} from 'react';
 import styled from 'styled-components/native';
 import {theme} from '../../../ui';
 import {appImage} from '../../../utilities';
-import {Spacer, CustomTextInput, CustomButton} from '../../../components';
+import {Spacer, CustomButton} from '../../../components';
 import {RouteProp, useNavigation} from '@react-navigation/native';
-import {Alert, Text} from 'react-native';
-import {
-  CodeField,
-  Cursor,
-  useBlurOnFulfill,
-  useClearByFocusCell,
-} from 'react-native-confirmation-code-field';
+import {Text} from 'react-native';
+import {CodeField, Cursor} from 'react-native-confirmation-code-field';
 
 export type ParamsProps = {
   route: RouteProp<{
@@ -31,7 +26,7 @@ const TitleContainer = styled.View({
   marginTop: theme.space[5],
 });
 
-const IconContainer = styled.View({
+const IconContainer = styled.TouchableOpacity({
   height: theme.space[8],
   width: theme.space[8],
   justifyContent: 'center',
@@ -54,13 +49,6 @@ const DescriptionText = styled.Text({
   fontSize: theme.fontSize.navButtonText,
 });
 
-const OtpCodeMainContainer = styled.View({
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  marginTop: theme.space[5],
-});
-
 const ButtonContianer = styled.KeyboardAvoidingView({
   height: '50%',
   alignItems: 'center',
@@ -71,25 +59,18 @@ const EnterOtpScreen: FunctionComponent<ParamsProps> = ({route}) => {
   const PhoneNumber = route.params?.value;
   const {confirm} = route.params;
   console.log('[confirm---->>>>]', confirm);
+  const nav = useNavigation();
 
   const [code, setCode] = useState('');
 
-  //   async function confirmCode() {
-  //     try {
-  //       await confirm.confirm(code);
-  //     } catch (error) {
-  //       console.log('Invalid code.');
-  //       Alert.alert('Error', error.message);
-  //     }
-  //   }
   async function confirmCode() {
     try {
       console.log('code---->>>>', code, confirm);
-      confirm.confirm(code).then(async response => {
+      confirm.confirm(code).then(async (response: string) => {
         console.log('[response ---->>>> ]', response);
         const token = await messaging().getToken();
         await firestore().collection('employee').add({code, token});
-        navigation.navigate('ChatPage');
+        // navigation.navigate('ChatPage');
       });
     } catch (error) {
       console.log('Invalid code....', error);
@@ -98,26 +79,19 @@ const EnterOtpScreen: FunctionComponent<ParamsProps> = ({route}) => {
 
   const handleOnPress = () => {
     confirmCode();
+    nav.navigate('TopTabNavigator' as never);
   };
 
   return (
     <Container>
       <TitleContainer>
-        <IconContainer>
+        <IconContainer onPress={nav.goBack() as never}>
           <BackArrow source={appImage.backArrow} />
         </IconContainer>
         <TitleText>Enter OTP Code</TitleText>
       </TitleContainer>
       <Spacer.Column numberOfSpaces={50} />
       <DescriptionText>Code has been send to {PhoneNumber}</DescriptionText>
-      {/* <OtpCodeMainContainer>
-        <CustomTextInput small={true} />
-        <CustomTextInput small={true} />
-        <CustomTextInput small={true} />
-        <CustomTextInput small={true} />
-        <CustomTextInput small={true} />
-        <CustomTextInput small={true} />
-      </OtpCodeMainContainer> */}
       <CodeField
         value={code}
         onChangeText={setCode}
@@ -140,9 +114,7 @@ const EnterOtpScreen: FunctionComponent<ParamsProps> = ({route}) => {
                 color: 'black',
               },
               isFocused && {borderColor: 'orange'},
-            ]}
-            // onLayout={getCellOnLayoutHandler(index)}
-          >
+            ]}>
             {symbol || (isFocused ? <Cursor /> : null)}
           </Text>
         )}

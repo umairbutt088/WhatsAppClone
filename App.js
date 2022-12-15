@@ -5,6 +5,7 @@ import Login from './src/screens/authScreens/LogIn/Login';
 import SignUp from './src/screens/authScreens/SignUp/Signup';
 import SplashStack from './src/screens/authScreens/SplashScreen';
 import WellcomeStack from './src/screens/authScreens/OnBoarding';
+import TopTabNavigator from './src/topTabNavigator';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ function App() {
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="SplashStack" component={SplashStack} />
         <Stack.Screen name="WellcomeStack" component={WellcomeStack} />
+        <Stack.Screen name="TopTabNavigator" component={TopTabNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );

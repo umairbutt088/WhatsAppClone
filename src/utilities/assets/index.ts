@@ -5,4 +5,6 @@ export const appImage = {
   welcomeScreenImage: require('../../assets/icons/welcomeScreenImage.png'),
   Dots: require('../../assets/icons/Dots.png'),
   backArrow: require('../../assets/icons/backArrow.png'),
+  search: require('../../assets/icons/search.png'),
+  manueIcon: require('../../assets/icons/manueIcon.png'),
 };
