@@ -5,7 +5,7 @@ import Login from './src/screens/authScreens/LogIn/Login';
 import SignUp from './src/screens/authScreens/SignUp/Signup';
 import SplashStack from './src/screens/authScreens/SplashScreen';
 import WellcomeStack from './src/screens/authScreens/OnBoarding';
-// import TopTabNavigator from './src/topTabNavigator';
+import TopTabNavigator from './src/topTabNavigator';
 import EnterOtpScreen from './src/screens/authScreens/OnBoarding/EnterOtpScreen';
 import PhoneNumberScreen from './src/screens/authScreens/OnBoarding/PhoneNumberScreen';
 import auth from '@react-native-firebase/auth';
@@ -39,7 +39,7 @@ function App() {
           <Stack.Screen name="SignUp" component={SignUp} /> */}
           <Stack.Screen name="SplashStack" component={SplashStack} />
           <Stack.Screen name="WellcomeStack" component={WellcomeStack} />
-          {/* <Stack.Screen name="TopTabNavigator" component={TopTabNavigator} /> */}
+          <Stack.Screen name="TopTabNavigator" component={TopTabNavigator} />
           <Stack.Screen
             name="PhoneNumberScreen"
             component={PhoneNumberScreen}
@@ -53,9 +53,9 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="GifftedChatScreen"
+        initialRouteName="TopTabNavigator"
         screenOptions={{headerShown: false}}>
-        {/* <Stack.Screen name="TopTabNavigator" component={TopTabNavigator} /> */}
+        <Stack.Screen name="TopTabNavigator" component={TopTabNavigator} />
         <Stack.Screen name="GifftedChatScreen" component={GifftedChatScreen} />
       </Stack.Navigator>
     </NavigationContainer>

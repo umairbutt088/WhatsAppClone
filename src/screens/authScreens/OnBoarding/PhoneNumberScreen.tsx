@@ -100,7 +100,7 @@ const PhoneNumberScreen = () => {
         </TilteContainer>
         <Spacer.Column numberOfSpaces={5} />
         <DescriptionText>
-          WhatsApp will need to verify your phone number.{' '}
+          WhatsApp will need to verify your phone number.
           <DescriptionText_1>Whats my number?</DescriptionText_1>
         </DescriptionText>
         <Spacer.Column numberOfSpaces={20} />
@@ -111,7 +111,7 @@ const PhoneNumberScreen = () => {
           setFormattedValue={a => setFormattedValue(a)}
         />
         <ButtonContianer>
-          <CustomButton small title="NEXT" />
+          <CustomButton small title="NEXT" onPress={handleOnPress} />
         </ButtonContianer>
       </Container>
     </ParentContainer>

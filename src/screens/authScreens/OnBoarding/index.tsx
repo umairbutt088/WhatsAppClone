@@ -2,6 +2,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import WellcomeScreen from './WellcomeScreen';
 import PhoneNumberScreen from './PhoneNumberScreen';
+import EnterOtpScreen from './EnterOtpScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ const WellcomeStack = () => {
       }}>
       <Stack.Screen name="WellcomeScreen" component={WellcomeScreen} />
       <Stack.Screen name="PhoneNumberScreen" component={PhoneNumberScreen} />
+      <Stack.Screen name="EnterOtpScreen" component={EnterOtpScreen} />
     </Stack.Navigator>
   );
 };
