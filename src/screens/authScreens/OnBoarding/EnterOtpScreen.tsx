@@ -83,13 +83,12 @@ const EnterOtpScreen: FunctionComponent<ParamsProps> = ({route}) => {
 
   const handleOnPress = () => {
     confirmCode();
-    nav.navigate('TopTabNavigator' as never);
   };
 
   return (
     <Container>
       <TitleContainer>
-        <IconContainer onPress={nav.goBack() as never}>
+        <IconContainer onPress={() => nav.goBack()}>
           <BackArrow source={appImage.backArrow} />
         </IconContainer>
         <TitleText>Enter OTP Code</TitleText>

@@ -8,5 +8,4 @@ export const appImage = {
   search: require('../../assets/icons/search.png'),
   manueIcon: require('../../assets/icons/manueIcon.png'),
   messageIcon: require('../../assets/icons/messageIcon.png'),
-
 };
