@@ -26,6 +26,8 @@ target 'WhatsApp' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  use_frameworks! :linkage => :static
+
   target 'WhatsAppTests' do
     inherit! :complete
     # Pods for testing

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {appImage} from '../../../utilities';
 import styled from 'styled-components/native';
 import {theme} from '../../../ui';
@@ -8,17 +8,17 @@ import {
   CustomButton,
   ParentContainer,
 } from '../../../components';
-<<<<<<< Updated upstream
-=======
 import auth from '@react-native-firebase/auth';
 import {useNavigation} from '@react-navigation/native';
 import {Alert} from 'react-native';
 import PhoneInput from 'react-native-phone-number-input';
+import auth from '@react-native-firebase/auth';
+import {useNavigation} from '@react-navigation/native';
+import {Alert} from 'react-native';
 
 interface props {
   value?: string;
 }
->>>>>>> Stashed changes
 
 const Container = styled.SafeAreaView({
   flex: 1,
@@ -67,33 +67,47 @@ const ButtonContianer = styled.KeyboardAvoidingView({
 });
 
 const PhoneNumberScreen = () => {
-<<<<<<< Updated upstream
-=======
+  const [confirm, setConfirm] = useState(null);
+  const [code, setCode] = useState('');
   const [value, setValue] = useState('');
   const [formattedValue, setFormattedValue] = useState('');
 
   const nav = useNavigation();
 
   async function signInWithPhoneNumber(formattedValue) {
+  console.log('value', value, formattedValue);
+
+  async function signInWithPhoneNumber(value) {
     try {
       const confirmation: any = await auth().signInWithPhoneNumber(
         formattedValue,
       );
+
       nav.navigate('EnterOtpScreen', {
         confirm: confirmation,
         value: formattedValue,
       });
     } catch (error: any) {
       console.log('error', error.message);
+      console.log('confirmation', confirmation);
+
+      setConfirm(confirmation);
+    } catch (error: any) {
       Alert.alert('Error', error.message);
     }
   }
 
   const handleOnPress = () => {
+
     signInWithPhoneNumber(formattedValue);
   };
+    signInWithPhoneNumber(value);
+    nav.navigate('EnterOtpScreen', {
+      value: formattedValue,
+      confirm: confirm,
+    });
+  };
 
->>>>>>> Stashed changes
   return (
     <ParentContainer>
       <Container>
@@ -110,18 +124,17 @@ const PhoneNumberScreen = () => {
           <DescriptionText_1>Whats my number?</DescriptionText_1>
         </DescriptionText>
         <Spacer.Column numberOfSpaces={20} />
-<<<<<<< Updated upstream
         <PhoneTextInput isNumber />
-=======
         <PhoneTextInput
           isNumber={true}
           value={value}
           setValue={setValue}
           setFormattedValue={a => setFormattedValue(a)}
         />
->>>>>>> Stashed changes
+          setFormattedValue={setFormattedValue}
+        />
         <ButtonContianer>
-          <CustomButton small title="NEXT" />
+          <CustomButton small title="NEXT" onPress={handleOnPress} />
         </ButtonContianer>
       </Container>
     </ParentContainer>
