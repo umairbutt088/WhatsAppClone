@@ -57,7 +57,7 @@ const WellcomeScreen = () => {
       <Spacer.Column numberOfSpaces={10} />
       <CustomButton
         title="Agree and continue"
-        onPress={() => nav.navigate('PhoneNumberScreen' as never)}
+        onPress={() => nav.navigate('TopTabNavigator' as never)}
       />
     </Container>
   );

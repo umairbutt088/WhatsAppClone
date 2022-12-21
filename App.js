@@ -5,14 +5,11 @@ import Login from './src/screens/authScreens/LogIn/Login';
 import SignUp from './src/screens/authScreens/SignUp/Signup';
 import SplashStack from './src/screens/authScreens/SplashScreen';
 import WellcomeStack from './src/screens/authScreens/OnBoarding';
-<<<<<<< Updated upstream
-=======
 import TopTabNavigator from './src/topTabNavigator';
 import EnterOtpScreen from './src/screens/authScreens/OnBoarding/EnterOtpScreen';
 import PhoneNumberScreen from './src/screens/authScreens/OnBoarding/PhoneNumberScreen';
 import auth from '@react-native-firebase/auth';
 import GifftedChatScreen from './src/screens/authScreens/ChatModule/Chat';
->>>>>>> Stashed changes
 
 const Stack = createNativeStackNavigator();
 
@@ -58,15 +55,8 @@ function App() {
       <Stack.Navigator
         initialRouteName="TopTabNavigator"
         screenOptions={{headerShown: false}}>
-<<<<<<< Updated upstream
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="SignUp" component={SignUp} />
-        <Stack.Screen name="SplashStack" component={SplashStack} />
-        <Stack.Screen name="WellcomeStack" component={WellcomeStack} />
-=======
         <Stack.Screen name="TopTabNavigator" component={TopTabNavigator} />
         <Stack.Screen name="GifftedChatScreen" component={GifftedChatScreen} />
->>>>>>> Stashed changes
       </Stack.Navigator>
     </NavigationContainer>
   );

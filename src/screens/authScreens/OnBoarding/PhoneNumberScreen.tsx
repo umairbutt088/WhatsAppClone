@@ -7,6 +7,7 @@ import {
   PhoneTextInput,
   CustomButton,
   ParentContainer,
+  Loader,
 } from '../../../components';
 import auth from '@react-native-firebase/auth';
 import {useNavigation} from '@react-navigation/native';
@@ -71,6 +72,7 @@ const PhoneNumberScreen = () => {
   const [code, setCode] = useState('');
   const [value, setValue] = useState('');
   const [formattedValue, setFormattedValue] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const nav = useNavigation();
 
@@ -93,6 +95,7 @@ const PhoneNumberScreen = () => {
 
       setConfirm(confirmation);
     } catch (error: any) {
+      console.log('error', error.message);
       Alert.alert('Error', error.message);
     }
   }
@@ -120,7 +123,7 @@ const PhoneNumberScreen = () => {
         </TilteContainer>
         <Spacer.Column numberOfSpaces={5} />
         <DescriptionText>
-          WhatsApp will need to verify your phone number.{' '}
+          WhatsApp will need to verify your phone number.
           <DescriptionText_1>Whats my number?</DescriptionText_1>
         </DescriptionText>
         <Spacer.Column numberOfSpaces={20} />
@@ -137,6 +140,7 @@ const PhoneNumberScreen = () => {
           <CustomButton small title="NEXT" onPress={handleOnPress} />
         </ButtonContianer>
       </Container>
+      <Loader show={loading} />
     </ParentContainer>
   );
 };
