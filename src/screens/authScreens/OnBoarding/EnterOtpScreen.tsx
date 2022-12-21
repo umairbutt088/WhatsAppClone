@@ -6,6 +6,8 @@ import {Spacer, CustomButton} from '../../../components';
 import {RouteProp, useNavigation} from '@react-navigation/native';
 import {Text} from 'react-native';
 import {CodeField, Cursor} from 'react-native-confirmation-code-field';
+import messaging from '@react-native-firebase/messaging';
+import firestore from '@react-native-firebase/firestore';
 
 export type ParamsProps = {
   route: RouteProp<{
@@ -57,8 +59,9 @@ const ButtonContianer = styled.KeyboardAvoidingView({
 
 const EnterOtpScreen: FunctionComponent<ParamsProps> = ({route}) => {
   const PhoneNumber = route.params?.value;
-  const {confirm} = route.params;
-  console.log('[confirm---->>>>]', confirm);
+  const confirm = route.params?.confirm;
+  console.log('confirm---->>>>', confirm);
+
   const nav = useNavigation();
 
   const [code, setCode] = useState('');
@@ -69,8 +72,9 @@ const EnterOtpScreen: FunctionComponent<ParamsProps> = ({route}) => {
       confirm.confirm(code).then(async (response: string) => {
         console.log('[response ---->>>> ]', response);
         const token = await messaging().getToken();
+        console.log('[token ---->>>> ]', token);
         await firestore().collection('employee').add({code, token});
-        // navigation.navigate('ChatPage');
+        nav.navigate('TopTabNavigator' as never);
       });
     } catch (error) {
       console.log('Invalid code....', error);
