@@ -55,7 +55,7 @@ export const PhoneTextInput: FunctionComponent<props> = ({isNumber}) => {
         defaultValue={value}
         value={value}
         withDarkTheme={true}
-        defaultCode="US"
+        defaultCode="PK"
         onChangeText={setValue}
         onChangeFormattedText={setFormattedValue}
         // countryPickerProps={{disableNativeModal: true}}

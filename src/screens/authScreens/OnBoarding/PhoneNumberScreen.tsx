@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {appImage} from '../../../utilities';
 import styled from 'styled-components/native';
 import {theme} from '../../../ui';
@@ -8,6 +8,14 @@ import {
   CustomButton,
   ParentContainer,
 } from '../../../components';
+import auth from '@react-native-firebase/auth';
+import {useNavigation} from '@react-navigation/native';
+import {Alert} from 'react-native';
+import PhoneInput from 'react-native-phone-number-input';
+
+interface props {
+  value?: string;
+}
 
 const Container = styled.SafeAreaView({
   flex: 1,
@@ -56,6 +64,30 @@ const ButtonContianer = styled.KeyboardAvoidingView({
 });
 
 const PhoneNumberScreen = () => {
+  const [value, setValue] = useState('');
+  const [formattedValue, setFormattedValue] = useState('');
+
+  const nav = useNavigation();
+
+  async function signInWithPhoneNumber(formattedValue: string) {
+    try {
+      const confirmation: any = await auth().signInWithPhoneNumber(
+        formattedValue,
+      );
+      nav.navigate('EnterOtpScreen', {
+        confirm: confirmation,
+        value: formattedValue,
+      });
+    } catch (error: any) {
+      console.log('error', error.message);
+      Alert.alert('Error', error.message);
+    }
+  }
+
+  const handleOnPress = () => {
+    signInWithPhoneNumber(formattedValue);
+  };
+
   return (
     <ParentContainer>
       <Container>
@@ -72,7 +104,12 @@ const PhoneNumberScreen = () => {
           <DescriptionText_1>Whats my number?</DescriptionText_1>
         </DescriptionText>
         <Spacer.Column numberOfSpaces={20} />
-        <PhoneTextInput isNumber />
+        <PhoneTextInput
+          isNumber={true}
+          value={value}
+          setValue={setValue}
+          setFormattedValue={a => setFormattedValue(a)}
+        />
         <ButtonContianer>
           <CustomButton small title="NEXT" />
         </ButtonContianer>
