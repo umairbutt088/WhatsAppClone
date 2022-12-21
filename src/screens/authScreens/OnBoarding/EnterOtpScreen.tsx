@@ -2,6 +2,12 @@ import React, {useState, FunctionComponent} from 'react';
 import styled from 'styled-components/native';
 import {theme} from '../../../ui';
 import {appImage} from '../../../utilities';
+import {Spacer, CustomButton} from '../../../components';
+import {RouteProp, useNavigation} from '@react-navigation/native';
+import {Text} from 'react-native';
+import {CodeField, Cursor} from 'react-native-confirmation-code-field';
+import messaging from '@react-native-firebase/messaging';
+import firestore from '@react-native-firebase/firestore';
 import {Spacer, CustomTextInput, CustomButton} from '../../../components';
 import {RouteProp, useNavigation} from '@react-navigation/native';
 import {Alert, Text} from 'react-native';
@@ -31,6 +37,7 @@ const TitleContainer = styled.View({
   marginTop: theme.space[5],
 });
 
+const IconContainer = styled.TouchableOpacity({
 const IconContainer = styled.View({
   height: theme.space[8],
   width: theme.space[8],
@@ -69,6 +76,22 @@ const ButtonContianer = styled.KeyboardAvoidingView({
 
 const EnterOtpScreen: FunctionComponent<ParamsProps> = ({route}) => {
   const PhoneNumber = route.params?.value;
+  const confirm = route.params?.confirm;
+  console.log('confirm---->>>>', confirm);
+
+  const nav = useNavigation();
+
+  const [code, setCode] = useState('');
+
+  async function confirmCode() {
+    try {
+      console.log('code---->>>>', code, confirm);
+      confirm.confirm(code).then(async (response: string) => {
+        console.log('[response ---->>>> ]', response);
+        const token = await messaging().getToken();
+        console.log('[token ---->>>> ]', token);
+        await firestore().collection('employee').add({code, token});
+        nav.navigate('TopTabNavigator' as never);
   const {confirm} = route.params;
   console.log('[confirm---->>>>]', confirm);
 
@@ -103,6 +126,7 @@ const EnterOtpScreen: FunctionComponent<ParamsProps> = ({route}) => {
   return (
     <Container>
       <TitleContainer>
+        <IconContainer onPress={() => nav.goBack()}>
         <IconContainer>
           <BackArrow source={appImage.backArrow} />
         </IconContainer>
@@ -118,6 +142,7 @@ const EnterOtpScreen: FunctionComponent<ParamsProps> = ({route}) => {
         <CustomTextInput small={true} />
         <CustomTextInput small={true} />
       </OtpCodeMainContainer> */}
+
       <CodeField
         value={code}
         onChangeText={setCode}
@@ -140,6 +165,7 @@ const EnterOtpScreen: FunctionComponent<ParamsProps> = ({route}) => {
                 color: 'black',
               },
               isFocused && {borderColor: 'orange'},
+            ]}>
             ]}
             // onLayout={getCellOnLayoutHandler(index)}
           >

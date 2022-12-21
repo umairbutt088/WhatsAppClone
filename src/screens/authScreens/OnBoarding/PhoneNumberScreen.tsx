@@ -11,6 +11,10 @@ import {
 import auth from '@react-native-firebase/auth';
 import {useNavigation} from '@react-navigation/native';
 import {Alert} from 'react-native';
+import PhoneInput from 'react-native-phone-number-input';
+import auth from '@react-native-firebase/auth';
+import {useNavigation} from '@react-navigation/native';
+import {Alert} from 'react-native';
 
 interface props {
   value?: string;
@@ -69,6 +73,8 @@ const PhoneNumberScreen = () => {
   const [formattedValue, setFormattedValue] = useState('');
 
   const nav = useNavigation();
+
+  async function signInWithPhoneNumber(formattedValue) {
   console.log('value', value, formattedValue);
 
   async function signInWithPhoneNumber(value) {
@@ -76,6 +82,13 @@ const PhoneNumberScreen = () => {
       const confirmation: any = await auth().signInWithPhoneNumber(
         formattedValue,
       );
+
+      nav.navigate('EnterOtpScreen', {
+        confirm: confirmation,
+        value: formattedValue,
+      });
+    } catch (error: any) {
+      console.log('error', error.message);
       console.log('confirmation', confirmation);
 
       setConfirm(confirmation);
@@ -85,6 +98,9 @@ const PhoneNumberScreen = () => {
   }
 
   const handleOnPress = () => {
+
+    signInWithPhoneNumber(formattedValue);
+  };
     signInWithPhoneNumber(value);
     nav.navigate('EnterOtpScreen', {
       value: formattedValue,
@@ -108,10 +124,13 @@ const PhoneNumberScreen = () => {
           <DescriptionText_1>Whats my number?</DescriptionText_1>
         </DescriptionText>
         <Spacer.Column numberOfSpaces={20} />
+        <PhoneTextInput isNumber />
         <PhoneTextInput
           isNumber={true}
           value={value}
           setValue={setValue}
+          setFormattedValue={a => setFormattedValue(a)}
+        />
           setFormattedValue={setFormattedValue}
         />
         <ButtonContianer>
