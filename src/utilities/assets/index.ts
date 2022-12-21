@@ -4,4 +4,11 @@ export const appImage = {
   DesignImage: require('../../assets/icons/Vector.png'),
   welcomeScreenImage: require('../../assets/icons/welcomeScreenImage.png'),
   Dots: require('../../assets/icons/Dots.png'),
+<<<<<<< Updated upstream
+=======
+  backArrow: require('../../assets/icons/backArrow.png'),
+  search: require('../../assets/icons/search.png'),
+  manueIcon: require('../../assets/icons/manueIcon.png'),
+  messageIcon: require('../../assets/icons/messageIcon.png'),
+>>>>>>> Stashed changes
 };

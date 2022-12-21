@@ -2,6 +2,11 @@
   package="com.whatsapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+<<<<<<< Updated upstream
+=======
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+>>>>>>> Stashed changes
 
     <application
       android:name=".MainApplication"

@@ -8,6 +8,17 @@ import {
   CustomButton,
   ParentContainer,
 } from '../../../components';
+<<<<<<< Updated upstream
+=======
+import auth from '@react-native-firebase/auth';
+import {useNavigation} from '@react-navigation/native';
+import {Alert} from 'react-native';
+import PhoneInput from 'react-native-phone-number-input';
+
+interface props {
+  value?: string;
+}
+>>>>>>> Stashed changes
 
 const Container = styled.SafeAreaView({
   flex: 1,
@@ -56,6 +67,33 @@ const ButtonContianer = styled.KeyboardAvoidingView({
 });
 
 const PhoneNumberScreen = () => {
+<<<<<<< Updated upstream
+=======
+  const [value, setValue] = useState('');
+  const [formattedValue, setFormattedValue] = useState('');
+
+  const nav = useNavigation();
+
+  async function signInWithPhoneNumber(formattedValue) {
+    try {
+      const confirmation: any = await auth().signInWithPhoneNumber(
+        formattedValue,
+      );
+      nav.navigate('EnterOtpScreen', {
+        confirm: confirmation,
+        value: formattedValue,
+      });
+    } catch (error: any) {
+      console.log('error', error.message);
+      Alert.alert('Error', error.message);
+    }
+  }
+
+  const handleOnPress = () => {
+    signInWithPhoneNumber(formattedValue);
+  };
+
+>>>>>>> Stashed changes
   return (
     <ParentContainer>
       <Container>
@@ -72,7 +110,16 @@ const PhoneNumberScreen = () => {
           <DescriptionText_1>Whats my number?</DescriptionText_1>
         </DescriptionText>
         <Spacer.Column numberOfSpaces={20} />
+<<<<<<< Updated upstream
         <PhoneTextInput isNumber />
+=======
+        <PhoneTextInput
+          isNumber={true}
+          value={value}
+          setValue={setValue}
+          setFormattedValue={a => setFormattedValue(a)}
+        />
+>>>>>>> Stashed changes
         <ButtonContianer>
           <CustomButton small title="NEXT" />
         </ButtonContianer>
