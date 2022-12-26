@@ -10,10 +10,10 @@ const Container = styled.View({
 });
 
 const GifftedChatScreen = ({navigation, route}) => {
-  const {xid, name} = route.params;
-  console.log('Name is here---=-=-==--=>>>>', name, xid);
+  const {xid} = route?.params;
+  console.log('Name is here---=-=-==--=>>>>', xid);
 
-  const userId = auth().currentUser.uid;
+  const userId = auth()?.currentUser?.uid;
 
   const [messages, setMessages] = useState([]);
 
@@ -66,51 +66,51 @@ const GifftedChatScreen = ({navigation, route}) => {
       .add({...mymsg, createdAt: firestore.FieldValue.serverTimestamp()});
   };
 
-  let params = {
-    to: xid,
-    content_available: true,
-    priority: 0,
-    notification: {
-      // title: msg.text,
-      // text: msg.text,
-      badge: 1,
-      sound: 'default',
-      color: 'green',
-      content_available: true,
-      subtitle: 'Hello subTitle',
-      show_in_foreground: true,
-      show_in_background: true,
-    },
-    data: {
-      // title: msg.text,
-      // text: msg.text,
-      customId: '123456789',
-      alert: 'notification',
-      subtitle: '',
-      sound: 'default',
-      color: 'red',
-      content_available: false,
-      priority: 0,
-      vibrate: 500,
-      show_in_foreground: true,
-      show_in_background: false,
-    },
-  };
+  // let params = {
+  //   to: xid,
+  //   content_available: true,
+  //   priority: 0,
+  //   notification: {
+  //     // title: msg.text,
+  //     // text: msg.text,
+  //     badge: 1,
+  //     sound: 'default',
+  //     color: 'green',
+  //     content_available: true,
+  //     subtitle: 'Hello subTitle',
+  //     show_in_foreground: true,
+  //     show_in_background: true,
+  //   },
+  //   data: {
+  //     // title: msg.text,
+  //     // text: msg.text,
+  //     customId: '123456789',
+  //     alert: 'notification',
+  //     subtitle: '',
+  //     sound: 'default',
+  //     color: 'red',
+  //     content_available: false,
+  //     priority: 0,
+  //     vibrate: 500,
+  //     show_in_foreground: true,
+  //     show_in_background: false,
+  //   },
+  // };
 
-  axios
-    .post('https://fcm.googleapis.com/fcm/send', params, {
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization:
-          'AAAA-Fg1msE:APA91bFhf4buIC1niOeOxDuVNGlnjwc0zLh36USAAOp2L2W54_OsW2mmY2TvAivz8Z6dwL29NGUtHIB_AxShB3Qh8QbdIaMMFlESxVHmMWE3J1O9T__i47mPekxk8VBJ3sd8w7nhaCXj',
-      },
-    })
-    .then(data => {
-      console.log('[data ---->>>> ]', data);
-    })
-    .catch(error => {
-      console.log('[error ---->>>>]', error);
-    });
+  // axios
+  //   .post('https://fcm.googleapis.com/fcm/send', params, {
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       Authorization:
+  //         'AAAA-Fg1msE:APA91bFhf4buIC1niOeOxDuVNGlnjwc0zLh36USAAOp2L2W54_OsW2mmY2TvAivz8Z6dwL29NGUtHIB_AxShB3Qh8QbdIaMMFlESxVHmMWE3J1O9T__i47mPekxk8VBJ3sd8w7nhaCXj',
+  //     },
+  //   })
+  //   .then(data => {
+  //     console.log('[data ---->>>> ]', data);
+  //   })
+  //   .catch(error => {
+  //     console.log('[error ---->>>>]', error);
+  //   });
 
   return (
     <Container>

@@ -8,6 +8,7 @@ import {Text} from 'react-native';
 import {CodeField, Cursor} from 'react-native-confirmation-code-field';
 import messaging from '@react-native-firebase/messaging';
 import firestore from '@react-native-firebase/firestore';
+import auth from '@react-native-firebase/auth';
 
 export type ParamsProps = {
   route: RouteProp<{
@@ -73,7 +74,9 @@ const EnterOtpScreen: FunctionComponent<ParamsProps> = ({route}) => {
         console.log('[response ---->>>> ]', response);
         const token = await messaging().getToken();
         console.log('[token ---->>>> ]', token);
-        await firestore().collection('employee').add({code, token});
+        await firestore()
+          .collection('employee')
+          .add({token, PhoneNumber, uid: auth().currentUser?.uid});
         nav.navigate('TopTabNavigator' as never);
       });
     } catch (error) {
