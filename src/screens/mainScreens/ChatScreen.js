@@ -8,6 +8,8 @@ import {theme} from '../../ui';
 import {appImage} from '../../utilities';
 import {NumberCard} from '../../components';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import firestore from '@react-native-firebase/firestore';
+import auth from '@react-native-firebase/auth';
 
 const Container = styled.SafeAreaView({
   flex: 1,
@@ -24,6 +26,16 @@ const MessageButton = styled.TouchableOpacity({
   justifyContent: 'center',
   backgroundColor: theme.colors.primery100,
 });
+const DeleteButton = styled.TouchableOpacity({
+  width: 70,
+  left: 20,
+  height: 70,
+  bottom: 100,
+  borderRadius: 50,
+  position: 'absolute',
+  justifyContent: 'center',
+  backgroundColor: theme.colors.red100,
+});
 
 const MessageIcon = styled.Image({
   height: 30,
@@ -36,10 +48,11 @@ const ContactModle = styled.Modal({
   flex: 1,
 });
 
-const ChatScreen = () => {
+const ChatScreen = ({route}) => {
   const [data, setData] = useState();
   const [modle, setModle] = useState(false);
   const [list, setList] = useState([]);
+  const [authData, setAuthData] = useState();
 
   const nav = useNavigation();
 
@@ -74,10 +87,24 @@ const ChatScreen = () => {
   useEffect(() => {
     requestCameraPermission();
     getData();
+    userData();
   }, []);
 
   const handleModle = () => {
     setModle(!modle);
+  };
+
+  const userData = () => {
+    let arr = [];
+    firestore()
+      .collection('employee')
+      .onSnapshot(documentSnapshot => {
+        documentSnapshot.forEach(x => {
+          arr.push({...x.data()});
+        });
+        setAuthData(arr);
+        console.log('Length of data', arr.length);
+      });
   };
 
   const selectNewNumber = async items => {
@@ -110,10 +137,15 @@ const ChatScreen = () => {
 
   const handleChatPress = item => {
     nav.navigate('GifftedChatScreen', {
-      xid: item.recordID,
-      name: item.displayName,
+      xid: item.uid,
     });
     console.log('item ----------->>>>', item);
+  };
+
+  const handleDelete = async () => {
+    auth()
+      .signOut()
+      .then(() => console.log('User signed out!'));
   };
 
   return (
@@ -121,12 +153,14 @@ const ChatScreen = () => {
       {!modle ? (
         <Container>
           <FlatList
-            data={list}
+            // data={list}
+            data={authData}
             renderItem={({item}) => {
               return (
                 <NumberCard
-                  title={item.displayName}
-                  number={item.phoneNumbers[0]?.number}
+                  title={item.PhoneNumber}
+                  // title={item.displayName}
+                  // number={item.phoneNumbers[0]?.number}
                   onPress={() => handleChatPress(item)}
                 />
               );
@@ -135,6 +169,7 @@ const ChatScreen = () => {
           <MessageButton onPress={handleModle}>
             <MessageIcon source={appImage.messageIcon} />
           </MessageButton>
+          <DeleteButton onPress={handleDelete}></DeleteButton>
         </Container>
       ) : (
         <ContactModle visible={modle}>
